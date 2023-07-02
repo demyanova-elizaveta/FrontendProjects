@@ -1,0 +1,118 @@
+html, body {
+    margin: 0;
+}
+html {
+    font-family: 'Montserrat';
+}
+body {
+    background-color: #FFF4DD;
+    font-size: 15px;
+    color: #293139;
+}
+p {
+    color: #000000;
+    font-weight: 500;
+}
+/*Wrapper*/
+.container {
+    width: 575px;
+    margin: 0 auto;
+}
+div {
+    width: 575px;
+    padding-bottom: 15px;
+}
+div:last-child {
+    margin-bottom: 50px;
+}
+/*Headers*/
+h1 {
+    background-color: #85A38D;
+    color: #FFF;
+    padding: 30px;
+    margin: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 55px;
+}
+h2 {
+    border-bottom: 2px solid #85A38D;
+    padding-left: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+/*Photo*/
+.photo {
+    text-align: center;
+}
+img {
+    margin: 30px 0;
+}
+/*Technologies*/
+.technologies li {
+    margin-left: 25px;
+}
+/*Knowledge list*/
+.knowledge_list {
+    list-style: none;
+}
+.knowledge_list li {
+    margin: 30px 0;
+}
+.knowledge_list a {
+    font-weight: 700;
+    color: #00AEE4;
+}
+.knowledge_list input {
+    font-size: 15px;
+}
+input, button {
+    margin: 0 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+}
+input {
+    border: 1px solid #85A38D;
+    padding: 10px 15px;
+    text-transform: capitalize;
+}
+button {
+    border: none;
+    padding: 10px 40px;
+    background-color: #00AEE4;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+/*Contacts*/
+.contacts a {
+    font-weight: 600;
+}
+.contacts li:first-child a {
+    text-decoration: none;
+    color: #293139;
+}
+.contacts li:last-child a {
+    font-weight: 700;
+    color: #00AEE4;
+}
+/*Table*/
+table {
+    width: 464px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 13px;
+}
+th, td {
+    padding: 10px 20px;
+}
+th {
+    background-color: #85A38D;
+    color: #FFF;
+}
+td {
+    background-color: #FFF;
+    color: #000000;
+}
