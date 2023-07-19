@@ -1,0 +1,53 @@
+/* Обнуление стилей */
+
+*,
+*::before,
+*::after {
+    padding: 0px;
+	margin: 0px;
+	border: 0;
+	box-sizing: border-box;
+}
+
+a  {
+    text-decoration: none;
+}
+
+ul, ol, li {
+	list-style: none;
+}
+
+/* теги принимают на себя общий дизайн шрифта - наследуют родительский */
+h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+	font-weight: inherit;
+}
+
+/* img имеет свойства строчного элемента, что в свою очередь означает, что элемент будет выравниваться по базовой линии текста
+эта базовая линия предусмотрена под запятые, хвосты букв и тд, оттого и отступ */
+/* для отсутствия снизу артефактного отступа, так как изображение по умолчанию display: inline-block, 
+либо через подключение vertical-align - вертикального выравнивания */
+img {
+	vertical-align: top;
+}
+
+html,
+body {
+    min-height: 100%;
+    line-height: 1;
+    font-size: 16px;
+    color: #000;
+    font-family: Montserrat;
+  }
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+/*контейнер, не относящийся к БЭМ-методологии, технический - под контент*/
+._container {
+    max-width: 1046px;
+    /* выстраивание блока посередине, ширина этого блока(1046px) должна быть меньше родительской */
+    margin: 0px auto; 
+}
