@@ -6,6 +6,7 @@
     padding: 0px;
 	margin: 0px;
 	border: 0;
+    /*размеры вычисляются, не включая границы и отступы*/
 	box-sizing: border-box;
 }
 
@@ -35,8 +36,9 @@ html,
 body {
     min-height: 100%;
     line-height: 1;
-    font-size: 16px;
-    color: #000;
+    font-size: 14px;
+    color: #252B42;
+    font-weight: 500;
     font-family: Montserrat;
   }
 
@@ -50,4 +52,80 @@ body {
     max-width: 1046px;
     /* выстраивание блока посередине, ширина этого блока(1046px) должна быть меньше родительской */
     margin: 0px auto; 
+    /*размеры вычисляются, включая границы и отступы + добавление padding для отсутствия прилипания к краю экрана*/
+	box-sizing: content-box;
+    padding: 0px 15px;
+}
+/*-----------------------------------------------------------------------------------------------*/
+.header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    /*больший индекс выдвигает блок на первый план*/
+    z-index: 50;
+}
+.header__container {
+    display: flex;
+    /*по дизайну в фигме*/
+    min-height: 104px;
+    align-items: center;
+}
+/*меньшая высота шапки при меньшем размере экрана*/
+@media (max-width: 479px) {
+    .header__container {
+        min-height: 70px;
+    }
+}
+.header__logo {
+    font-size: 24px;
+    font-weight: 700;
+    /*ссылки не наследуют цвет - нужно указать явно*/
+    color: inherit;
+}
+.header__menu {
+    margin: 0px 0px 0px 133px;
+}
+/*до 992px - устройства с маленьким экраном: планшеты*/
+@media (max-width: 992px) {
+    .header__menu {
+        margin: 0px 0px 0px 80px;
+    }
+}
+/*для мобильных устройств*/
+@media (max-width: 767px) {
+    .header__menu {
+        margin: 0px 0px 0px 40px;
+    }
+}
+/*уменьшаем отступ для увеличения шрифта пунктов меню*/
+@media (max-width: 479px) {
+    .header__menu {
+        margin: 0px 0px 0px 20px;
+    }
+}
+.menu {
+    /*отступы безопасности против "прилипания" элементов меню к верху экрана*/
+    padding: 5px 0px;
+}
+.menu__list {
+    display: flex;
+    /*для переноса элементов шапки - предусматриваем добавление пунктов меню в будущем*/
+    flex-wrap: wrap;
+}
+.menu__item:not(:last-child) {
+    margin: 0px 21px 0px 0px;
+}
+.menu__link {
+    color: #737373;
+    font-weight: 600;
+    /*Pixel (Px) = (Percent * Base)/100*/
+    line-height: 171%;
+    /*line-height: calc(24/14*100)*/
+}
+/*легче попадать по большему размеру пунктов меню*/
+@media (max-width: 479px) {
+    .menu__link {
+        font-size: 18px;
+    }
 }
