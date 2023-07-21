@@ -45,6 +45,9 @@ body {
 .wrapper {
     min-height: 100%;
     overflow: hidden;
+    /*располагаем все блоки последовательно - header, main, footer*/
+    display: flex;
+    flex-direction: column;
 }
 
 /*контейнер, не относящийся к БЭМ-методологии, технический - под контент*/
@@ -55,6 +58,20 @@ body {
     /*размеры вычисляются, включая границы и отступы + добавление padding для отсутствия прилипания к краю экрана*/
 	box-sizing: content-box;
     padding: 0px 15px;
+}
+
+/*технический класс для фоновых изображений*/
+._ibg  {
+    position: relative;
+}
+
+._ibg img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
 }
 /*-----------------------------------------------------------------------------------------------*/
 .header {
@@ -127,5 +144,112 @@ body {
 @media (max-width: 479px) {
     .menu__link {
         font-size: 18px;
+    }
+}
+/*------------------------------------------------------------------------------------*/
+.page {
+    /*flex элементы с большим количеством содержимого будут больше(относительный размер flex элементов)*/
+    flex: 1 1 auto;
+}
+.page__main-block {
+}
+/*------------------------------------------------------------------------------------*/
+.footer {
+
+}
+.main-block {
+    position: relative;
+}
+.main-block__container {
+}
+.main-block__body {
+    /*отступы под контент по дизайну*/
+    padding: 184px 0px 191px 0px;
+    /*выносим контент на передний план(иначе будет скрыт за картинкой): position: relative + z-index*/
+    position: relative;
+    z-index: 2;
+    /*ограничитель под контент(по дизайну было другое значение, 
+    но мы можем менять исходя из того, что по дизайну другое отображение текста)*/
+    max-width: 400px;
+}
+@media (max-width: 992px) {
+    .main-block__body {
+        padding: 120px 0px 191px 0px;
+    }
+}
+/*отступ для всех объектов(блочных) первого уровня, которые будут находиться в .main-block__body*/
+/*контент меняется, а вёрстка остаётся адаптивной и страница визуально выглядит очень хорошо, 
+даже если начать убирать элементы из .main-block__body*/
+.main-block__body >*:not(:last-child) {
+    padding: 0px 0px 35px 0px;
+}
+.main-block__title {
+    font-size: 58px;
+    line-height: calc(80 / 58 * 100%);
+    letter-spacing: 0.2px;
+    font-weight: 800;
+}
+@media (max-width: 479px) {
+    .main-block__title {
+        font-size: 42px;
+    }
+}
+.main-block__text {
+    color: #737373;
+    font-size: 20px;
+    line-height: calc(30 / 20 * 100%);
+}
+@media(max-width: 992px) {
+    .main-block__text {
+        color: #585757;
+    }
+}
+.main-block__buttons {
+    display: flex;
+}
+/*"универсальная" верстка кнопочек - подстраиваются под размер контента*/
+.main-block__button {
+    border-radius: 37px;
+    min-height: 48px;
+    letter-spacing: 0.2px;
+    font-weight: 700;
+    /*по дизайну было вычислено 200%, но мы можем на своё усмотрение изменить до меньшего размера, чтобы визуально было лучше*/
+    line-height: 150%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 36px;
+}
+.main-block__button:not(:last-child) {
+    margin: 0px 10px 0px 0px;
+}
+.main-block__button_orange {
+    background: #ff7b47;
+    color:#fff;
+}
+.main-block__button_border {
+    color: #0d5c63;
+    border: 1px solid #0d5c63;
+}
+/*позиционирование непосредственно самого блока, который содержит картинку*/
+.main-block__image {
+    /*position: absolute относительно .main-block*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+/*отображение людей при маленьких размерах экранов*/
+@media(max-width: 1300px) {
+    .main-block__image img{
+        object-position: right;
+    }
+}
+/*выбеливаем картинку для читабельности текста*/
+@media(max-width: 992px) {
+    .main-block__image {
+        opacity: 0.5;
     }
 }
