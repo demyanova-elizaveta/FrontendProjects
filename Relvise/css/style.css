@@ -170,6 +170,8 @@ body {
 }
 .page__subscribe {
 }
+.page__getintouch {
+}
 /*------------------------------------------------------------------------------------*/
 .header_block {
     text-align: center;
@@ -827,4 +829,112 @@ body {
     .subscribe__button {
         padding: 0px 15px;
     }
+}
+/*------------------------------------------------------------------------------------*/
+.getintouch {
+    padding: 80px 0px 135px 0px;
+}
+@media (max-width: 992px) {
+    .getintouch {
+        padding: 50px 0px;
+    }
+}
+.getintouch__container {
+}
+.getintouch__header {
+    margin: 0px 0px 80px 0px;
+}
+/* getintouch__items по mobile-first */
+.getintouch__items {
+    margin: 0px -15px;
+}
+@media (min-width: 992px) {
+    .getintouch__items {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+}
+@media (max-width: 992px) {
+    .getintouch__header {
+        margin: 0px 0px 50px 0px;
+    }
+}
+@media (max-width: 767px) {
+    .getintouch__header {
+        margin: 0px 0px 30px 0px;
+    }
+}
+.getintouch__item {
+    flex: 0 1 33.333%;
+
+}
+.item-getintouch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 50px 15px;
+}
+/* ставим блоки item-getintouch__active выше, поскольку если их поставить ниже .item-getintouch__button:hover,
+то будет неправильный приоритет окраски границы кнопки(поскольку каскадная таблица стилей) */
+.item-getintouch__active {
+    padding: 80px 15px;
+    background: #252b42;
+    color: #fff;
+}
+@media (max-width: 992px) {
+    .item-getintouch__active {
+        padding: 50px 15px;
+    }
+}
+.item-getintouch__active .item-getintouch__button {
+    border: 1px solid #fff;
+    color: #fff;
+}
+.item-getintouch > *:not(:last-child) {
+    margin: 0px 0px 15px 0px;
+}
+.getintouch__icon {
+}
+.getintouch__emails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.item-getintouch__email {
+    color: inherit;
+    font-weight: 600;
+    line-height: calc(24 / 16 * 100%);
+    font-size: 16px;
+}
+.item-getintouch__email:hover {
+    text-decoration: underline;
+}
+.getintouch__label {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: calc(24 / 16 * 100%);
+}
+.item-getintouch__button {
+    border-radius: 5px;
+    min-height: 44px;
+    border: 1px solid #ff7b47;
+    color: #FF7B47;
+    font-weight: 600;
+    line-height: calc(24 / 14 * 100%);
+    padding: 5px 20px;
+    /* для выравнивания содержимого по центру */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* анимация */
+    transition: all 0.3s ease 0s;
+}
+.item-getintouch__button:hover {
+    border: 1px solid #ff7b47;
+    background-color: #ff7b47;
+    color: #fff;
 }
