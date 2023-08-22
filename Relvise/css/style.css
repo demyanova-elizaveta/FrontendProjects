@@ -172,6 +172,8 @@ body {
 }
 .page__getintouch {
 }
+.page__contact {
+}
 /*------------------------------------------------------------------------------------*/
 .header_block {
     text-align: center;
@@ -936,5 +938,62 @@ body {
 .item-getintouch__button:hover {
     border: 1px solid #ff7b47;
     background-color: #ff7b47;
+    color: #fff;
+}
+/*------------------------------------------------------------------------------------*/
+.contact {
+    background-color: #fff;
+    padding: 40px 0;
+}
+.contact__container {
+}
+/* для блока contact__body используем mobile-first */
+.contact__body {
+}
+.contact__content {
+    padding: 0px 0px 20px 0px;
+}
+@media(min-width: 767px) {
+    .contact__body {
+        display: flex;
+        align-items: center;
+        /* раскидываем блок с контентом и кнопку */
+        justify-content: space-between;
+    }
+    .contact__content {
+        /* отступ безопасности против прилипания кнопки к правому краю */
+        padding: 0px 20px 0px 0px;
+    }
+}
+.contact__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: calc(32 / 24 * 100%);
+    letter-spacing: 0.1px;
+}
+.contact__title:not(:last-child) {
+    margin: 0px 0px 10px 0px;
+}
+.contact__text {
+    color: #737373;
+    line-height: calc(20 / 14 * 100%);
+}
+.contact__button {
+    border-radius: 5px;
+    border: 1px solid #FF7B47;
+    background: #FF7B47;
+    min-height: 58px;
+    padding: 5px 40px;
+    color: #fff;
+    /* для выравнивания содержимого по центру */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* анимация */
+    transition: all 0.3s ease 0s;
+}
+.contact__button:hover {
+    border: 1px solid #ca5121;
+    background-color: #ca5121;
     color: #fff;
 }
