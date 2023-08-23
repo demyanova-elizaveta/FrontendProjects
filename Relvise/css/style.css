@@ -141,6 +141,9 @@ body {
     line-height: 171%;
     /*line-height: calc(24/14*100)*/
 }
+.menu__link:hover {
+    text-decoration: underline;
+}
 /*легче попадать по большему размеру пунктов меню*/
 @media (max-width: 479px) {
     .menu__link {
@@ -271,6 +274,12 @@ body {
     justify-content: center;
     align-items: center;
     padding: 0px 36px;
+    /* анимация */
+    transition: all 0.3s ease 0s;
+}
+.main-block__button:hover {
+    background: #fff;
+    color:#ff7b47;
 }
 .main-block__button:not(:last-child) {
     margin: 0px 10px 0px 0px;
@@ -282,6 +291,10 @@ body {
 .main-block__button_border {
     color: #0d5c63;
     border: 1px solid #0d5c63;
+}
+.main-block__button_border:hover {
+    background: #0d5c63;
+    color:#fff;
 }
 /*позиционирование непосредственно самого блока, который содержит картинку*/
 .main-block__image {
@@ -826,6 +839,12 @@ body {
     text-align: center;
     color: #fff;
     flex-shrink: 0;
+    /* анимация */
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+.subscribe__button:hover {
+    background: #db6d42;
 }
 @media(max-width: 810px) {
     .subscribe__button {
