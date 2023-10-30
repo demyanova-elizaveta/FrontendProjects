@@ -1,0 +1,39 @@
+<div>
+    <input id="operand1" type="text">
+    <select id="selectOperation">
+        <option value="add" selected>+</option>
+        <option value="subtract">-</option>
+      </select>
+    <input id="operand2" type="text">
+    <button id="enterButton">=</button>
+    <label id="result"></label>
+</div>
+<script>
+    class Operation {
+        handleEvent(event) {
+            if ((event.key == 'Enter' && event.type=='keydown') || event.type=='click') {
+                const select = document.getElementById("selectOperation");
+                const selectedIndex = select.selectedIndex;
+                const selectedOption = select.options[selectedIndex];
+                const method = selectedOption.value;
+
+                const value1 = parseInt(operand1.value) || 0;
+                const value2 = parseInt(operand2.value) || 0;
+
+                this[method](value1, value2);
+            }
+        }
+
+        add(value1, value2) {
+            result.textContent = value1 + value2;
+        }
+
+        subtract(value1, value2) {
+            result.textContent = value1 - value2;
+        }
+     }
+
+    let op = new Operation();
+    enterButton.addEventListener('click', op);
+    document.addEventListener('keydown', op);
+</script>
